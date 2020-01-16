@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ecstatic public",
-    "build": "cp src/index.html public/index.html",
+    "build": "cp src/index.html public/index.html && rm -rf public/images && mkdir public/images && cp src/images/* public/images",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/nichoth/jessica1#readme",
   "devDependencies": {
     "ecstatic": "^4.1.2",
-    "hyperstream": "^1.2.2"
+    "hyperstream": "^1.2.2",
+    "yaml-front-matter": "^4.1.0"
   }
 }
