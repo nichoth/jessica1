@@ -7,7 +7,7 @@
     "start": "npm run build && npm run build-css && concurrently --kill-others \"npm run sass-watch\" \"ecstatic public\"",
     "build-css": "node-sass --output-style=compressed src/style/main.scss > public/style.css",
     "sass-watch": "node-sass --watch src/style/main.scss --source-map-embed public/style.css",
-    "copy": "cp src/index.html public/index.html && rm -rf public/images && mkdir public/images && cp src/images/* public/images",
+    "copy": "rm -rf public/main && mkdir public/main && cp src/main/index.html public/main/index.html && cp src/index.html public/index.html && rm -rf public/images && mkdir public/images && cp src/images/* public/images",
     "build": "npm run build-css && npm run copy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
