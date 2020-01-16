@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ecstatic public",
-    "build": "cp src/index.html public/index.html && rm -rf public/images && mkdir public/images && cp src/images/* public/images",
+    "start": "npm run build && npm run build-css && concurrently --kill-others \"npm run sass-watch\" \"ecstatic public\"",
+    "build-css": "node-sass --output-style=compressed src/style/main.scss > public/style.css",
+    "sass-watch": "node-sass --watch src/style/main.scss --source-map-embed public/style.css",
+    "copy": "cp src/index.html public/index.html && rm -rf public/images && mkdir public/images && cp src/images/* public/images",
+    "build": "npm run build-css && npm run copy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +22,10 @@
   },
   "homepage": "https://github.com/nichoth/jessica1#readme",
   "devDependencies": {
+    "concurrently": "^5.0.2",
     "ecstatic": "^4.1.2",
     "hyperstream": "^1.2.2",
+    "node-sass": "^4.13.1",
     "yaml-front-matter": "^4.1.0"
   }
 }
