@@ -1,1 +1,1 @@
-process.stdin.pipe(process.stdout)
+console.log(process.argv.slice(2))
