@@ -27,5 +27,8 @@
     "hyperstream": "^1.2.2",
     "node-sass": "^4.13.1",
     "yaml-front-matter": "^4.1.0"
+  },
+  "dependencies": {
+    "front-matter": "^3.1.0"
   }
 }
