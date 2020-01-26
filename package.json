@@ -8,7 +8,8 @@
     "build-css": "node-sass --output-style=compressed src/style/main.scss > public/style.css",
     "sass-watch": "node-sass --watch src/style/main.scss --source-map-embed public/style.css",
     "copy": "rm -rf public/main && mkdir public/main && cp src/main/index.html public/main/index.html && cp src/index.html public/index.html && rm -rf public/images && mkdir public/images && cp src/images/* public/images",
-    "build": "npm run build-css && npm run copy",
+    "build": "npm run build-css && npm run copy && npm run html",
+    "html": "node src/build.js src/_posts/videos/* > public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -20,17 +20,9 @@ process.argv.slice(2).forEach(function(vid) {
                     _appendHtml: embed
                 }
             })
-            rs.pipe(hs).pipe(process.stdout)
 
+            rs.pipe(hs).pipe(process.stdout)
         }
-        // var hs = hyperstream({
-        //     '#videos': {
-        //         _appendHtml: yaml.attributes.embedCode
-        //     }
-        // })
-        // var rs = _hs || fs.createReadStream(__dirname + '/index.html')
-        // rs.pipe(hs)
-        // _hs = hs
     })
 })
 
