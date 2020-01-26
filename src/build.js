@@ -11,7 +11,10 @@ process.argv.slice(2).forEach(function(vid) {
     fs.readFile(vid, 'utf8', function (err, data) {
         if (err) throw err
         var yaml = fm(data)
-        embed += '<div>' + yaml.attributes.embedCode + '</div>'
+
+        embed += '<div>' + '<h2>' + yaml.attributes.title + '</h2>' +
+            yaml.attributes.embedCode + '</div>'
+
         i++
         if (i === process.argv.slice(2).length) {
             var rs = fs.createReadStream(__dirname + '/index.html')
